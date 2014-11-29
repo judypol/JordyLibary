@@ -1,0 +1,10 @@
+D:\ProCode\JordyLibary\SuporLibary\bin\Debug\JordyLibary.dll
+D:\ProCode\JordyLibary\SuporLibary\bin\Debug\JordyLibary.pdb
+D:\ProCode\JordyLibary\SuporLibary\bin\Debug\EPPlus.dll
+D:\ProCode\JordyLibary\SuporLibary\bin\Debug\System.Data.SQLite.dll
+D:\ProCode\JordyLibary\SuporLibary\bin\Debug\EPPlus.xml
+D:\ProCode\JordyLibary\SuporLibary\obj\Debug\JordyLibary.csprojResolveAssemblyReference.cache
+D:\ProCode\JordyLibary\SuporLibary\obj\Debug\JordyLibary.ORM.DataMsg.resources
+D:\ProCode\JordyLibary\SuporLibary\obj\Debug\JordyLibary.csproj.GenerateResource.Cache
+D:\ProCode\JordyLibary\SuporLibary\obj\Debug\JordyLibary.dll
+D:\ProCode\JordyLibary\SuporLibary\obj\Debug\JordyLibary.pdb

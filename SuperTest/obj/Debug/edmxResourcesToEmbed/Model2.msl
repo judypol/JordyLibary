@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HanTingModelStoreContainer" CdmEntityContainer="HanTingEntities">
+    <EntitySetMapping Name="cdsgus">
+      <EntityTypeMapping TypeName="HanTingModel.cdsgus">
+        <MappingFragment StoreEntitySet="cdsgus">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+          <ScalarProperty Name="Descriot" ColumnName="Descriot" />
+          <ScalarProperty Name="CtfTp" ColumnName="CtfTp" />
+          <ScalarProperty Name="CtfId" ColumnName="CtfId" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Dirty" ColumnName="Dirty" />
+          <ScalarProperty Name="District1" ColumnName="District1" />
+          <ScalarProperty Name="District2" ColumnName="District2" />
+          <ScalarProperty Name="District3" ColumnName="District3" />
+          <ScalarProperty Name="District4" ColumnName="District4" />
+          <ScalarProperty Name="District5" ColumnName="District5" />
+          <ScalarProperty Name="District6" ColumnName="District6" />
+          <ScalarProperty Name="FirstNm" ColumnName="FirstNm" />
+          <ScalarProperty Name="LastNm" ColumnName="LastNm" />
+          <ScalarProperty Name="Duty" ColumnName="Duty" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Nation" ColumnName="Nation" />
+          <ScalarProperty Name="Taste" ColumnName="Taste" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="CTel" ColumnName="CTel" />
+          <ScalarProperty Name="CAddress" ColumnName="CAddress" />
+          <ScalarProperty Name="CZip" ColumnName="CZip" />
+          <ScalarProperty Name="Family" ColumnName="Family" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

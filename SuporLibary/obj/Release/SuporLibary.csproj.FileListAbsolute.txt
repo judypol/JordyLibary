@@ -1,0 +1,9 @@
+D:\ProCode\SuporLibary\SuporLibary\bin\Release\SuporLibary.dll
+D:\ProCode\SuporLibary\SuporLibary\bin\Release\SuporLibary.pdb
+D:\ProCode\SuporLibary\SuporLibary\bin\Release\EPPlus.dll
+D:\ProCode\SuporLibary\SuporLibary\bin\Release\EPPlus.xml
+D:\ProCode\SuporLibary\SuporLibary\obj\Release\SuporLibary.ORM.DataMsg.resources
+D:\ProCode\SuporLibary\SuporLibary\obj\Release\SuporLibary.csproj.GenerateResource.Cache
+D:\ProCode\SuporLibary\SuporLibary\obj\Release\SuporLibary.dll
+D:\ProCode\SuporLibary\SuporLibary\obj\Release\SuporLibary.pdb
+D:\ProCode\SuporLibary\SuporLibary\bin\Release\System.Data.SQLite.dll

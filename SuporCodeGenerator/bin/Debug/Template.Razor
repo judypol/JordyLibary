@@ -1,0 +1,47 @@
+﻿@using System.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using SuporLibary.ORM.Mappings;
+using SuporLibary.ORM;
+
+namespace Model
+{
+	[Table("@Model.SchemasTableName")]
+    public class @Model.TableName:DataObject
+    {
+	@foreach (var item in Model.ColumnInfoCollection)
+	{
+		@:private @item.ColumnType @item.PrivateColumnName;
+		@:public static FieldInfo<@item.ColumnType> @item.LitteColumnName=new FieldInfo<@item.ColumnType> ("@Model.TableName","@item.ColumnName");
+	}
+
+	@foreach (var item in Model.ColumnInfoCollection)
+	{
+		@:///
+		@:///
+		@:///
+		if(item.ID)
+		{
+		@:[ID()]
+		}
+		else
+		{
+		@:[Column()]
+		}
+		@:public virtual @item.ColumnType @item.ColumnName
+		{
+		@:get
+		@:{
+			@:return @item.PrivateColumnName;
+		@:}
+		@:set
+		@:{
+			@:@item.PrivateColumnName=value;
+			@:EntityState.FieldChange("@item.ColumnName")
+		@:}
+		}
+	}
+    }
+}

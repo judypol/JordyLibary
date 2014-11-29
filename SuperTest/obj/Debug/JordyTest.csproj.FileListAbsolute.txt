@@ -1,0 +1,16 @@
+D:\ProCode\JordyLibary\SuperTest\bin\Debug\SuperTest.exe.config
+D:\ProCode\JordyLibary\SuperTest\bin\Debug\SuperTest.exe
+D:\ProCode\JordyLibary\SuperTest\bin\Debug\SuperTest.pdb
+D:\ProCode\JordyLibary\SuperTest\bin\Debug\EntityFramework.dll
+D:\ProCode\JordyLibary\SuperTest\bin\Debug\EntityFramework.SqlServer.dll
+D:\ProCode\JordyLibary\SuperTest\bin\Debug\JordyLibary.dll
+D:\ProCode\JordyLibary\SuperTest\bin\Debug\EPPlus.dll
+D:\ProCode\JordyLibary\SuperTest\bin\Debug\System.Data.SQLite.dll
+D:\ProCode\JordyLibary\SuperTest\bin\Debug\JordyLibary.pdb
+D:\ProCode\JordyLibary\SuperTest\bin\Debug\EntityFramework.xml
+D:\ProCode\JordyLibary\SuperTest\bin\Debug\EntityFramework.SqlServer.xml
+D:\ProCode\JordyLibary\SuperTest\bin\Debug\EPPlus.xml
+D:\ProCode\JordyLibary\SuperTest\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\ProCode\JordyLibary\SuperTest\obj\Debug\JordyTest.csprojResolveAssemblyReference.cache
+D:\ProCode\JordyLibary\SuperTest\obj\Debug\SuperTest.exe
+D:\ProCode\JordyLibary\SuperTest\obj\Debug\SuperTest.pdb

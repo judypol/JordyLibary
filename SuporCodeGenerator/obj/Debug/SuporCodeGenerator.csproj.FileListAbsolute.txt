@@ -1,0 +1,11 @@
+D:\ProCode\SuporLibary\SuporCodeGenerator\bin\Debug\SuporCodeGenerator.exe
+D:\ProCode\SuporLibary\SuporCodeGenerator\bin\Debug\SuporCodeGenerator.pdb
+D:\ProCode\SuporLibary\SuporCodeGenerator\bin\Debug\RazorEngine.dll
+D:\ProCode\SuporLibary\SuporCodeGenerator\obj\Debug\SuporCodeGenerator.csprojResolveAssemblyReference.cache
+D:\ProCode\SuporLibary\SuporCodeGenerator\obj\Debug\SuporCodeGenerator.CodeGeneratorFrm.resources
+D:\ProCode\SuporLibary\SuporCodeGenerator\obj\Debug\SuporCodeGenerator.Properties.Resources.resources
+D:\ProCode\SuporLibary\SuporCodeGenerator\obj\Debug\SuporCodeGenerator.csproj.GenerateResource.Cache
+D:\ProCode\SuporLibary\SuporCodeGenerator\obj\Debug\SuporCodeGenerator.exe
+D:\ProCode\SuporLibary\SuporCodeGenerator\obj\Debug\SuporCodeGenerator.pdb
+D:\ProCode\SuporLibary\SuporCodeGenerator\bin\Debug\SuporCodeGenerator.exe.config
+D:\ProCode\SuporLibary\SuporCodeGenerator\bin\Debug\System.Data.SQLite.dll

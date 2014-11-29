@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HanTingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="cdsgus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="CardNo" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Descriot" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="CtfTp" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="CtfId" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Birthday" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Zip" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Dirty" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="District1" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="District2" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="District3" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="District4" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="District5" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="District6" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="FirstNm" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="LastNm" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Duty" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Tel" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="EMail" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Nation" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Taste" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Education" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Company" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="CTel" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="CAddress" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="CZip" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Family" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Version" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityContainer Name="HanTingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="cdsgus" EntityType="Self.cdsgus" />
+  </EntityContainer>
+</Schema>

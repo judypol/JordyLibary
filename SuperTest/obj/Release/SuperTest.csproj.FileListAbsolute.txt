@@ -1,0 +1,15 @@
+D:\ProCode\SuporLibary\SuperTest\bin\Release\SuperTest.exe.config
+D:\ProCode\SuporLibary\SuperTest\bin\Release\SuperTest.exe
+D:\ProCode\SuporLibary\SuperTest\bin\Release\SuperTest.pdb
+D:\ProCode\SuporLibary\SuperTest\bin\Release\EntityFramework.dll
+D:\ProCode\SuporLibary\SuperTest\bin\Release\EntityFramework.SqlServer.dll
+D:\ProCode\SuporLibary\SuperTest\bin\Release\SuporLibary.dll
+D:\ProCode\SuporLibary\SuperTest\bin\Release\EPPlus.dll
+D:\ProCode\SuporLibary\SuperTest\bin\Release\SuporLibary.pdb
+D:\ProCode\SuporLibary\SuperTest\bin\Release\EntityFramework.xml
+D:\ProCode\SuporLibary\SuperTest\bin\Release\EntityFramework.SqlServer.xml
+D:\ProCode\SuporLibary\SuperTest\bin\Release\EPPlus.xml
+D:\ProCode\SuporLibary\SuperTest\bin\Release\zh-Hans\EntityFramework.resources.dll
+D:\ProCode\SuporLibary\SuperTest\obj\Release\SuperTest.csprojResolveAssemblyReference.cache
+D:\ProCode\SuporLibary\SuperTest\obj\Release\SuperTest.exe
+D:\ProCode\SuporLibary\SuperTest\obj\Release\SuperTest.pdb

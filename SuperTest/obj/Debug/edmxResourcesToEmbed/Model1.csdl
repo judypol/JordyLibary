@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AdventureWorks2008R2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="EmployeeDepartmentHistory" Relationship="Self.FK_EmployeeDepartmentHistory_Department_DepartmentID" FromRole="Department" ToRole="EmployeeDepartmentHistory" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="BusinessEntityID" />
+    </Key>
+    <Property Name="BusinessEntityID" Type="Int32" Nullable="false" />
+    <Property Name="NationalIDNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoginID" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrganizationLevel" Type="Int16" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MaritalStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="HireDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="SalariedFlag" Type="Boolean" Nullable="false" />
+    <Property Name="VacationHours" Type="Int16" Nullable="false" />
+    <Property Name="SickLeaveHours" Type="Int16" Nullable="false" />
+    <Property Name="CurrentFlag" Type="Boolean" Nullable="false" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="EmployeeDepartmentHistory" Relationship="Self.FK_EmployeeDepartmentHistory_Employee_BusinessEntityID" FromRole="Employee" ToRole="EmployeeDepartmentHistory" />
+    <NavigationProperty Name="EmployeePayHistory" Relationship="Self.FK_EmployeePayHistory_Employee_BusinessEntityID" FromRole="Employee" ToRole="EmployeePayHistory" />
+    <NavigationProperty Name="JobCandidate" Relationship="Self.FK_JobCandidate_Employee_BusinessEntityID" FromRole="Employee" ToRole="JobCandidate" />
+  </EntityType>
+  <EntityType Name="EmployeeDepartmentHistory">
+    <Key>
+      <PropertyRef Name="BusinessEntityID" />
+      <PropertyRef Name="DepartmentID" />
+      <PropertyRef Name="ShiftID" />
+      <PropertyRef Name="StartDate" />
+    </Key>
+    <Property Name="BusinessEntityID" Type="Int32" Nullable="false" />
+    <Property Name="DepartmentID" Type="Int16" Nullable="false" />
+    <Property Name="ShiftID" Type="Byte" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_EmployeeDepartmentHistory_Department_DepartmentID" FromRole="EmployeeDepartmentHistory" ToRole="Department" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_EmployeeDepartmentHistory_Employee_BusinessEntityID" FromRole="EmployeeDepartmentHistory" ToRole="Employee" />
+    <NavigationProperty Name="Shift" Relationship="Self.FK_EmployeeDepartmentHistory_Shift_ShiftID" FromRole="EmployeeDepartmentHistory" ToRole="Shift" />
+  </EntityType>
+  <EntityType Name="EmployeePayHistory">
+    <Key>
+      <PropertyRef Name="BusinessEntityID" />
+      <PropertyRef Name="RateChangeDate" />
+    </Key>
+    <Property Name="BusinessEntityID" Type="Int32" Nullable="false" />
+    <Property Name="RateChangeDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Rate" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="PayFrequency" Type="Byte" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_EmployeePayHistory_Employee_BusinessEntityID" FromRole="EmployeePayHistory" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="JobCandidate">
+    <Key>
+      <PropertyRef Name="JobCandidateID" />
+    </Key>
+    <Property Name="JobCandidateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BusinessEntityID" Type="Int32" />
+    <Property Name="Resume" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_JobCandidate_Employee_BusinessEntityID" FromRole="JobCandidate" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Shift">
+    <Key>
+      <PropertyRef Name="ShiftID" />
+    </Key>
+    <Property Name="ShiftID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="EmployeeDepartmentHistory" Relationship="Self.FK_EmployeeDepartmentHistory_Shift_ShiftID" FromRole="Shift" ToRole="EmployeeDepartmentHistory" />
+  </EntityType>
+  <EntityType Name="vAdditionalContactInfo">
+    <Key>
+      <PropertyRef Name="BusinessEntityID" />
+      <PropertyRef Name="FirstName" />
+      <PropertyRef Name="LastName" />
+      <PropertyRef Name="rowguid" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="BusinessEntityID" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TelephoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TelephoneSpecialInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StateProvince" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountryRegion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HomeAddressSpecialInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EMailAddress" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="EMailSpecialInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EMailTelephoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="vStateProvinceCountryRegion">
+    <Key>
+      <PropertyRef Name="StateProvinceID" />
+      <PropertyRef Name="StateProvinceCode" />
+      <PropertyRef Name="IsOnlyStateProvinceFlag" />
+      <PropertyRef Name="StateProvinceName" />
+      <PropertyRef Name="TerritoryID" />
+      <PropertyRef Name="CountryRegionCode" />
+      <PropertyRef Name="CountryRegionName" />
+    </Key>
+    <Property Name="StateProvinceID" Type="Int32" Nullable="false" />
+    <Property Name="StateProvinceCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="IsOnlyStateProvinceFlag" Type="Boolean" Nullable="false" />
+    <Property Name="StateProvinceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TerritoryID" Type="Int32" Nullable="false" />
+    <Property Name="CountryRegionCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CountryRegionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vProductAndDescription">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="ProductModel" />
+      <PropertyRef Name="CultureID" />
+      <PropertyRef Name="Description" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductModel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CultureID" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vProductModelCatalogDescription">
+    <Key>
+      <PropertyRef Name="ProductModelID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="rowguid" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="ProductModelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Manufacturer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Copyright" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ProductURL" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="WarrantyPeriod" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="WarrantyDescription" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="NoOfYears" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="MaintenanceDescription" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Wheel" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Saddle" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Pedal" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="BikeFrame" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Crankset" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PictureAngle" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PictureSize" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ProductPhotoID" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Material" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ProductLine" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Style" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="RiderExperience" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="vProductModelInstructions">
+    <Key>
+      <PropertyRef Name="ProductModelID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="rowguid" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="ProductModelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Instructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LocationID" Type="Int32" />
+    <Property Name="SetupHours" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="MachineHours" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="LaborHours" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="LotSize" Type="Int32" />
+    <Property Name="Step" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK_EmployeeDepartmentHistory_Department_DepartmentID">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="EmployeeDepartmentHistory" Type="Self.EmployeeDepartmentHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="EmployeeDepartmentHistory">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeDepartmentHistory_Employee_BusinessEntityID">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="EmployeeDepartmentHistory" Type="Self.EmployeeDepartmentHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="BusinessEntityID" />
+      </Principal>
+      <Dependent Role="EmployeeDepartmentHistory">
+        <PropertyRef Name="BusinessEntityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeePayHistory_Employee_BusinessEntityID">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="EmployeePayHistory" Type="Self.EmployeePayHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="BusinessEntityID" />
+      </Principal>
+      <Dependent Role="EmployeePayHistory">
+        <PropertyRef Name="BusinessEntityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobCandidate_Employee_BusinessEntityID">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="JobCandidate" Type="Self.JobCandidate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="BusinessEntityID" />
+      </Principal>
+      <Dependent Role="JobCandidate">
+        <PropertyRef Name="BusinessEntityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeDepartmentHistory_Shift_ShiftID">
+    <End Role="Shift" Type="Self.Shift" Multiplicity="1" />
+    <End Role="EmployeeDepartmentHistory" Type="Self.EmployeeDepartmentHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shift">
+        <PropertyRef Name="ShiftID" />
+      </Principal>
+      <Dependent Role="EmployeeDepartmentHistory">
+        <PropertyRef Name="ShiftID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AdventureWorks2008R2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Department" EntityType="Self.Department" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" />
+    <EntitySet Name="EmployeeDepartmentHistory" EntityType="Self.EmployeeDepartmentHistory" />
+    <EntitySet Name="EmployeePayHistory" EntityType="Self.EmployeePayHistory" />
+    <EntitySet Name="JobCandidate" EntityType="Self.JobCandidate" />
+    <EntitySet Name="Shift" EntityType="Self.Shift" />
+    <EntitySet Name="vAdditionalContactInfo" EntityType="Self.vAdditionalContactInfo" />
+    <EntitySet Name="vStateProvinceCountryRegion" EntityType="Self.vStateProvinceCountryRegion" />
+    <EntitySet Name="vProductAndDescription" EntityType="Self.vProductAndDescription" />
+    <EntitySet Name="vProductModelCatalogDescription" EntityType="Self.vProductModelCatalogDescription" />
+    <EntitySet Name="vProductModelInstructions" EntityType="Self.vProductModelInstructions" />
+    <AssociationSet Name="FK_EmployeeDepartmentHistory_Department_DepartmentID" Association="Self.FK_EmployeeDepartmentHistory_Department_DepartmentID">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="EmployeeDepartmentHistory" EntitySet="EmployeeDepartmentHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeDepartmentHistory_Employee_BusinessEntityID" Association="Self.FK_EmployeeDepartmentHistory_Employee_BusinessEntityID">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EmployeeDepartmentHistory" EntitySet="EmployeeDepartmentHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeePayHistory_Employee_BusinessEntityID" Association="Self.FK_EmployeePayHistory_Employee_BusinessEntityID">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EmployeePayHistory" EntitySet="EmployeePayHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobCandidate_Employee_BusinessEntityID" Association="Self.FK_JobCandidate_Employee_BusinessEntityID">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="JobCandidate" EntitySet="JobCandidate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeDepartmentHistory_Shift_ShiftID" Association="Self.FK_EmployeeDepartmentHistory_Shift_ShiftID">
+      <End Role="Shift" EntitySet="Shift" />
+      <End Role="EmployeeDepartmentHistory" EntitySet="EmployeeDepartmentHistory" />
+    </AssociationSet>
+    <EntitySet Name="Address" EntityType="AdventureWorks2008R2Model.Address" />
+    <EntitySet Name="Product" EntityType="AdventureWorks2008R2Model.Product" />
+  </EntityContainer>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AddressLine1" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="AddressLine2" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="StateProvinceID" Type="Int32" Nullable="false" />
+    <Property Name="PostalCode" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="SpatialLocation" Type="Geography" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="MakeFlag" Type="Boolean" Nullable="false" />
+    <Property Name="FinishedGoodsFlag" Type="Boolean" Nullable="false" />
+    <Property Name="Color" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="SafetyStockLevel" Type="Int16" Nullable="false" />
+    <Property Name="ReorderPoint" Type="Int16" Nullable="false" />
+    <Property Name="StandardCost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="ListPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Size" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="SizeUnitMeasureCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="WeightUnitMeasureCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="Weight" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="DaysToManufacture" Type="Int32" Nullable="false" />
+    <Property Name="ProductLine" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+    <Property Name="Class" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+    <Property Name="Style" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+    <Property Name="ProductSubcategoryID" Type="Int32" />
+    <Property Name="ProductModelID" Type="Int32" />
+    <Property Name="SellStartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SellEndDate" Type="DateTime" Precision="3" />
+    <Property Name="DiscontinuedDate" Type="DateTime" Precision="3" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+</Schema>

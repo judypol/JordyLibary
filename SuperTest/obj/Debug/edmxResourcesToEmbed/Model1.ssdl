@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AdventureWorks2008R2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6005: 目标实体框架版本目前不支持数据类型“hierarchyid”；已排除表“OrganizationNode”中的列“AdventureWorks2008R2.HumanResources.Employee”。-->
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="BusinessEntityID" />
+    </Key>
+    <Property Name="BusinessEntityID" Type="int" Nullable="false" />
+    <Property Name="NationalIDNumber" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="LoginID" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="OrganizationLevel" Type="smallint" StoreGeneratedPattern="Computed" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BirthDate" Type="date" Nullable="false" />
+    <Property Name="MaritalStatus" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="Gender" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="HireDate" Type="date" Nullable="false" />
+    <Property Name="SalariedFlag" Type="bit" Nullable="false" />
+    <Property Name="VacationHours" Type="smallint" Nullable="false" />
+    <Property Name="SickLeaveHours" Type="smallint" Nullable="false" />
+    <Property Name="CurrentFlag" Type="bit" Nullable="false" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeeDepartmentHistory">
+    <Key>
+      <PropertyRef Name="BusinessEntityID" />
+      <PropertyRef Name="DepartmentID" />
+      <PropertyRef Name="ShiftID" />
+      <PropertyRef Name="StartDate" />
+    </Key>
+    <Property Name="BusinessEntityID" Type="int" Nullable="false" />
+    <Property Name="DepartmentID" Type="smallint" Nullable="false" />
+    <Property Name="ShiftID" Type="tinyint" Nullable="false" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeePayHistory">
+    <Key>
+      <PropertyRef Name="BusinessEntityID" />
+      <PropertyRef Name="RateChangeDate" />
+    </Key>
+    <Property Name="BusinessEntityID" Type="int" Nullable="false" />
+    <Property Name="RateChangeDate" Type="datetime" Nullable="false" />
+    <Property Name="Rate" Type="money" Nullable="false" />
+    <Property Name="PayFrequency" Type="tinyint" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobCandidate">
+    <Key>
+      <PropertyRef Name="JobCandidateID" />
+    </Key>
+    <Property Name="JobCandidateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BusinessEntityID" Type="int" />
+    <Property Name="Resume" Type="xml" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Shift">
+    <Key>
+      <PropertyRef Name="ShiftID" />
+    </Key>
+    <Property Name="ShiftID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AddressLine1" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="AddressLine2" Type="nvarchar" MaxLength="60" />
+    <Property Name="City" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="StateProvinceID" Type="int" Nullable="false" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="SpatialLocation" Type="geography" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="MakeFlag" Type="bit" Nullable="false" />
+    <Property Name="FinishedGoodsFlag" Type="bit" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" MaxLength="15" />
+    <Property Name="SafetyStockLevel" Type="smallint" Nullable="false" />
+    <Property Name="ReorderPoint" Type="smallint" Nullable="false" />
+    <Property Name="StandardCost" Type="money" Nullable="false" />
+    <Property Name="ListPrice" Type="money" Nullable="false" />
+    <Property Name="Size" Type="nvarchar" MaxLength="5" />
+    <Property Name="SizeUnitMeasureCode" Type="nchar" MaxLength="3" />
+    <Property Name="WeightUnitMeasureCode" Type="nchar" MaxLength="3" />
+    <Property Name="Weight" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="DaysToManufacture" Type="int" Nullable="false" />
+    <Property Name="ProductLine" Type="nchar" MaxLength="2" />
+    <Property Name="Class" Type="nchar" MaxLength="2" />
+    <Property Name="Style" Type="nchar" MaxLength="2" />
+    <Property Name="ProductSubcategoryID" Type="int" />
+    <Property Name="ProductModelID" Type="int" />
+    <Property Name="SellStartDate" Type="datetime" Nullable="false" />
+    <Property Name="SellEndDate" Type="datetime" />
+    <Property Name="DiscontinuedDate" Type="datetime" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“AdventureWorks2008R2.Person.vAdditionalContactInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="vAdditionalContactInfo">
+    <Key>
+      <PropertyRef Name="BusinessEntityID" />
+      <PropertyRef Name="FirstName" />
+      <PropertyRef Name="LastName" />
+      <PropertyRef Name="rowguid" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="BusinessEntityID" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TelephoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="TelephoneSpecialInstructions" Type="nvarchar(max)" />
+    <Property Name="Street" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="StateProvince" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryRegion" Type="nvarchar" MaxLength="50" />
+    <Property Name="HomeAddressSpecialInstructions" Type="nvarchar(max)" />
+    <Property Name="EMailAddress" Type="nvarchar" MaxLength="128" />
+    <Property Name="EMailSpecialInstructions" Type="nvarchar(max)" />
+    <Property Name="EMailTelephoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“AdventureWorks2008R2.Person.vStateProvinceCountryRegion”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="vStateProvinceCountryRegion">
+    <Key>
+      <PropertyRef Name="StateProvinceID" />
+      <PropertyRef Name="StateProvinceCode" />
+      <PropertyRef Name="IsOnlyStateProvinceFlag" />
+      <PropertyRef Name="StateProvinceName" />
+      <PropertyRef Name="TerritoryID" />
+      <PropertyRef Name="CountryRegionCode" />
+      <PropertyRef Name="CountryRegionName" />
+    </Key>
+    <Property Name="StateProvinceID" Type="int" Nullable="false" />
+    <Property Name="StateProvinceCode" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="IsOnlyStateProvinceFlag" Type="bit" Nullable="false" />
+    <Property Name="StateProvinceName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TerritoryID" Type="int" Nullable="false" />
+    <Property Name="CountryRegionCode" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="CountryRegionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“AdventureWorks2008R2.Production.vProductAndDescription”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="vProductAndDescription">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="ProductModel" />
+      <PropertyRef Name="CultureID" />
+      <PropertyRef Name="Description" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductModel" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CultureID" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="400" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“AdventureWorks2008R2.Production.vProductModelCatalogDescription”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="vProductModelCatalogDescription">
+    <Key>
+      <PropertyRef Name="ProductModelID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="rowguid" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="ProductModelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Summary" Type="nvarchar(max)" />
+    <Property Name="Manufacturer" Type="nvarchar(max)" />
+    <Property Name="Copyright" Type="nvarchar" MaxLength="30" />
+    <Property Name="ProductURL" Type="nvarchar" MaxLength="256" />
+    <Property Name="WarrantyPeriod" Type="nvarchar" MaxLength="256" />
+    <Property Name="WarrantyDescription" Type="nvarchar" MaxLength="256" />
+    <Property Name="NoOfYears" Type="nvarchar" MaxLength="256" />
+    <Property Name="MaintenanceDescription" Type="nvarchar" MaxLength="256" />
+    <Property Name="Wheel" Type="nvarchar" MaxLength="256" />
+    <Property Name="Saddle" Type="nvarchar" MaxLength="256" />
+    <Property Name="Pedal" Type="nvarchar" MaxLength="256" />
+    <Property Name="BikeFrame" Type="nvarchar(max)" />
+    <Property Name="Crankset" Type="nvarchar" MaxLength="256" />
+    <Property Name="PictureAngle" Type="nvarchar" MaxLength="256" />
+    <Property Name="PictureSize" Type="nvarchar" MaxLength="256" />
+    <Property Name="ProductPhotoID" Type="nvarchar" MaxLength="256" />
+    <Property Name="Material" Type="nvarchar" MaxLength="256" />
+    <Property Name="Color" Type="nvarchar" MaxLength="256" />
+    <Property Name="ProductLine" Type="nvarchar" MaxLength="256" />
+    <Property Name="Style" Type="nvarchar" MaxLength="256" />
+    <Property Name="RiderExperience" Type="nvarchar" MaxLength="1024" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“AdventureWorks2008R2.Production.vProductModelInstructions”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="vProductModelInstructions">
+    <Key>
+      <PropertyRef Name="ProductModelID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="rowguid" />
+      <PropertyRef Name="ModifiedDate" />
+    </Key>
+    <Property Name="ProductModelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Instructions" Type="nvarchar(max)" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="SetupHours" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="MachineHours" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="LaborHours" Type="decimal" Precision="9" Scale="4" />
+    <Property Name="LotSize" Type="int" />
+    <Property Name="Step" Type="nvarchar" MaxLength="1024" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_EmployeeDepartmentHistory_Department_DepartmentID">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="EmployeeDepartmentHistory" Type="Self.EmployeeDepartmentHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="EmployeeDepartmentHistory">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeDepartmentHistory_Employee_BusinessEntityID">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="EmployeeDepartmentHistory" Type="Self.EmployeeDepartmentHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="BusinessEntityID" />
+      </Principal>
+      <Dependent Role="EmployeeDepartmentHistory">
+        <PropertyRef Name="BusinessEntityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeDepartmentHistory_Shift_ShiftID">
+    <End Role="Shift" Type="Self.Shift" Multiplicity="1" />
+    <End Role="EmployeeDepartmentHistory" Type="Self.EmployeeDepartmentHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shift">
+        <PropertyRef Name="ShiftID" />
+      </Principal>
+      <Dependent Role="EmployeeDepartmentHistory">
+        <PropertyRef Name="ShiftID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeePayHistory_Employee_BusinessEntityID">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="EmployeePayHistory" Type="Self.EmployeePayHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="BusinessEntityID" />
+      </Principal>
+      <Dependent Role="EmployeePayHistory">
+        <PropertyRef Name="BusinessEntityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobCandidate_Employee_BusinessEntityID">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="JobCandidate" Type="Self.JobCandidate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="BusinessEntityID" />
+      </Principal>
+      <Dependent Role="JobCandidate">
+        <PropertyRef Name="BusinessEntityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AdventureWorks2008R2ModelStoreContainer">
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="HumanResources" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="HumanResources" store:Type="Tables" />
+    <EntitySet Name="EmployeeDepartmentHistory" EntityType="Self.EmployeeDepartmentHistory" Schema="HumanResources" store:Type="Tables" />
+    <EntitySet Name="EmployeePayHistory" EntityType="Self.EmployeePayHistory" Schema="HumanResources" store:Type="Tables" />
+    <EntitySet Name="JobCandidate" EntityType="Self.JobCandidate" Schema="HumanResources" store:Type="Tables" />
+    <EntitySet Name="Shift" EntityType="Self.Shift" Schema="HumanResources" store:Type="Tables" />
+    <EntitySet Name="Address" EntityType="Self.Address" Schema="Person" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="Production" store:Type="Tables" />
+    <EntitySet Name="vAdditionalContactInfo" EntityType="Self.vAdditionalContactInfo" store:Type="Views" store:Schema="Person">
+      <DefiningQuery>SELECT 
+    [vAdditionalContactInfo].[BusinessEntityID] AS [BusinessEntityID], 
+    [vAdditionalContactInfo].[FirstName] AS [FirstName], 
+    [vAdditionalContactInfo].[MiddleName] AS [MiddleName], 
+    [vAdditionalContactInfo].[LastName] AS [LastName], 
+    [vAdditionalContactInfo].[TelephoneNumber] AS [TelephoneNumber], 
+    [vAdditionalContactInfo].[TelephoneSpecialInstructions] AS [TelephoneSpecialInstructions], 
+    [vAdditionalContactInfo].[Street] AS [Street], 
+    [vAdditionalContactInfo].[City] AS [City], 
+    [vAdditionalContactInfo].[StateProvince] AS [StateProvince], 
+    [vAdditionalContactInfo].[PostalCode] AS [PostalCode], 
+    [vAdditionalContactInfo].[CountryRegion] AS [CountryRegion], 
+    [vAdditionalContactInfo].[HomeAddressSpecialInstructions] AS [HomeAddressSpecialInstructions], 
+    [vAdditionalContactInfo].[EMailAddress] AS [EMailAddress], 
+    [vAdditionalContactInfo].[EMailSpecialInstructions] AS [EMailSpecialInstructions], 
+    [vAdditionalContactInfo].[EMailTelephoneNumber] AS [EMailTelephoneNumber], 
+    [vAdditionalContactInfo].[rowguid] AS [rowguid], 
+    [vAdditionalContactInfo].[ModifiedDate] AS [ModifiedDate]
+    FROM [Person].[vAdditionalContactInfo] AS [vAdditionalContactInfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vStateProvinceCountryRegion" EntityType="Self.vStateProvinceCountryRegion" store:Type="Views" store:Schema="Person">
+      <DefiningQuery>SELECT 
+    [vStateProvinceCountryRegion].[StateProvinceID] AS [StateProvinceID], 
+    [vStateProvinceCountryRegion].[StateProvinceCode] AS [StateProvinceCode], 
+    [vStateProvinceCountryRegion].[IsOnlyStateProvinceFlag] AS [IsOnlyStateProvinceFlag], 
+    [vStateProvinceCountryRegion].[StateProvinceName] AS [StateProvinceName], 
+    [vStateProvinceCountryRegion].[TerritoryID] AS [TerritoryID], 
+    [vStateProvinceCountryRegion].[CountryRegionCode] AS [CountryRegionCode], 
+    [vStateProvinceCountryRegion].[CountryRegionName] AS [CountryRegionName]
+    FROM [Person].[vStateProvinceCountryRegion] AS [vStateProvinceCountryRegion]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vProductAndDescription" EntityType="Self.vProductAndDescription" store:Type="Views" store:Schema="Production">
+      <DefiningQuery>SELECT 
+    [vProductAndDescription].[ProductID] AS [ProductID], 
+    [vProductAndDescription].[Name] AS [Name], 
+    [vProductAndDescription].[ProductModel] AS [ProductModel], 
+    [vProductAndDescription].[CultureID] AS [CultureID], 
+    [vProductAndDescription].[Description] AS [Description]
+    FROM [Production].[vProductAndDescription] AS [vProductAndDescription]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vProductModelCatalogDescription" EntityType="Self.vProductModelCatalogDescription" store:Type="Views" store:Schema="Production">
+      <DefiningQuery>SELECT 
+    [vProductModelCatalogDescription].[ProductModelID] AS [ProductModelID], 
+    [vProductModelCatalogDescription].[Name] AS [Name], 
+    [vProductModelCatalogDescription].[Summary] AS [Summary], 
+    [vProductModelCatalogDescription].[Manufacturer] AS [Manufacturer], 
+    [vProductModelCatalogDescription].[Copyright] AS [Copyright], 
+    [vProductModelCatalogDescription].[ProductURL] AS [ProductURL], 
+    [vProductModelCatalogDescription].[WarrantyPeriod] AS [WarrantyPeriod], 
+    [vProductModelCatalogDescription].[WarrantyDescription] AS [WarrantyDescription], 
+    [vProductModelCatalogDescription].[NoOfYears] AS [NoOfYears], 
+    [vProductModelCatalogDescription].[MaintenanceDescription] AS [MaintenanceDescription], 
+    [vProductModelCatalogDescription].[Wheel] AS [Wheel], 
+    [vProductModelCatalogDescription].[Saddle] AS [Saddle], 
+    [vProductModelCatalogDescription].[Pedal] AS [Pedal], 
+    [vProductModelCatalogDescription].[BikeFrame] AS [BikeFrame], 
+    [vProductModelCatalogDescription].[Crankset] AS [Crankset], 
+    [vProductModelCatalogDescription].[PictureAngle] AS [PictureAngle], 
+    [vProductModelCatalogDescription].[PictureSize] AS [PictureSize], 
+    [vProductModelCatalogDescription].[ProductPhotoID] AS [ProductPhotoID], 
+    [vProductModelCatalogDescription].[Material] AS [Material], 
+    [vProductModelCatalogDescription].[Color] AS [Color], 
+    [vProductModelCatalogDescription].[ProductLine] AS [ProductLine], 
+    [vProductModelCatalogDescription].[Style] AS [Style], 
+    [vProductModelCatalogDescription].[RiderExperience] AS [RiderExperience], 
+    [vProductModelCatalogDescription].[rowguid] AS [rowguid], 
+    [vProductModelCatalogDescription].[ModifiedDate] AS [ModifiedDate]
+    FROM [Production].[vProductModelCatalogDescription] AS [vProductModelCatalogDescription]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vProductModelInstructions" EntityType="Self.vProductModelInstructions" store:Type="Views" store:Schema="Production">
+      <DefiningQuery>SELECT 
+    [vProductModelInstructions].[ProductModelID] AS [ProductModelID], 
+    [vProductModelInstructions].[Name] AS [Name], 
+    [vProductModelInstructions].[Instructions] AS [Instructions], 
+    [vProductModelInstructions].[LocationID] AS [LocationID], 
+    [vProductModelInstructions].[SetupHours] AS [SetupHours], 
+    [vProductModelInstructions].[MachineHours] AS [MachineHours], 
+    [vProductModelInstructions].[LaborHours] AS [LaborHours], 
+    [vProductModelInstructions].[LotSize] AS [LotSize], 
+    [vProductModelInstructions].[Step] AS [Step], 
+    [vProductModelInstructions].[rowguid] AS [rowguid], 
+    [vProductModelInstructions].[ModifiedDate] AS [ModifiedDate]
+    FROM [Production].[vProductModelInstructions] AS [vProductModelInstructions]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_EmployeeDepartmentHistory_Department_DepartmentID" Association="Self.FK_EmployeeDepartmentHistory_Department_DepartmentID">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="EmployeeDepartmentHistory" EntitySet="EmployeeDepartmentHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeDepartmentHistory_Employee_BusinessEntityID" Association="Self.FK_EmployeeDepartmentHistory_Employee_BusinessEntityID">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EmployeeDepartmentHistory" EntitySet="EmployeeDepartmentHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeDepartmentHistory_Shift_ShiftID" Association="Self.FK_EmployeeDepartmentHistory_Shift_ShiftID">
+      <End Role="Shift" EntitySet="Shift" />
+      <End Role="EmployeeDepartmentHistory" EntitySet="EmployeeDepartmentHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeePayHistory_Employee_BusinessEntityID" Association="Self.FK_EmployeePayHistory_Employee_BusinessEntityID">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EmployeePayHistory" EntitySet="EmployeePayHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobCandidate_Employee_BusinessEntityID" Association="Self.FK_JobCandidate_Employee_BusinessEntityID">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="JobCandidate" EntitySet="JobCandidate" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

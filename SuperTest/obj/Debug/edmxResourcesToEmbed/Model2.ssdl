@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HanTingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="cdsgus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="2000" />
+    <Property Name="CardNo" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Descriot" Type="nvarchar" MaxLength="2000" />
+    <Property Name="CtfTp" Type="nvarchar" MaxLength="2000" />
+    <Property Name="CtfId" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Birthday" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Address" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Zip" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Dirty" Type="nvarchar" MaxLength="2000" />
+    <Property Name="District1" Type="nvarchar" MaxLength="2000" />
+    <Property Name="District2" Type="nvarchar" MaxLength="2000" />
+    <Property Name="District3" Type="nvarchar" MaxLength="2000" />
+    <Property Name="District4" Type="nvarchar" MaxLength="2000" />
+    <Property Name="District5" Type="nvarchar" MaxLength="2000" />
+    <Property Name="District6" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FirstNm" Type="nvarchar" MaxLength="2000" />
+    <Property Name="LastNm" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Duty" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="2000" />
+    <Property Name="EMail" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Nation" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Taste" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Education" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Company" Type="nvarchar" MaxLength="2000" />
+    <Property Name="CTel" Type="nvarchar" MaxLength="2000" />
+    <Property Name="CAddress" Type="nvarchar" MaxLength="2000" />
+    <Property Name="CZip" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Family" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Version" Type="nvarchar" MaxLength="2000" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="HanTingModelStoreContainer">
+    <EntitySet Name="cdsgus" EntityType="Self.cdsgus" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

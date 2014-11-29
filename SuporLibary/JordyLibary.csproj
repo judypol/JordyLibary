@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BEB2E522-06E6-4033-8130-32107ED83849}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JordyLibary</RootNamespace>
+    <AssemblyName>JordyLibary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET_4</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NET_4</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus">
+      <HintPath>..\thirdPart\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\SuporCodeGenerator\Libs\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\ADOHelper.cs" />
+    <Compile Include="Core\DESCrypto.cs" />
+    <Compile Include="Core\Dispatch.cs" />
+    <Compile Include="Core\DynamicMethodExecutor.cs" />
+    <Compile Include="Core\EmitHandler.cs" />
+    <Compile Include="Core\ExcelHelper.cs" />
+    <Compile Include="Core\NameValueCollection.cs" />
+    <Compile Include="Core\ObjectCopy.cs" />
+    <Compile Include="Core\PerformanceTesting.cs" />
+    <Compile Include="Core\ReflectionHandlerFactory.cs" />
+    <Compile Include="Core\RSACrypto.cs" />
+    <Compile Include="Core\StopWatchExtend.cs" />
+    <Compile Include="Core\Uility.cs" />
+    <Compile Include="Core\Utils.cs" />
+    <Compile Include="Core\Validater.cs" />
+    <Compile Include="Core\XMLHelper.cs" />
+    <Compile Include="Core\XmlNameValueCollection.cs" />
+    <Compile Include="ORM\BlowFish.cs" />
+    <Compile Include="ORM\Command.cs" />
+    <Compile Include="ORM\ConnectionContext.cs" />
+    <Compile Include="ORM\ConnectionHandler.cs" />
+    <Compile Include="ORM\ConnectionType.cs" />
+    <Compile Include="ORM\DataMsg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataMsg.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\DBContext.cs" />
+    <Compile Include="ORM\DriverTemplate.cs" />
+    <Compile Include="ORM\EntityBase.cs" />
+    <Compile Include="ORM\Expression.cs" />
+    <Compile Include="ORM\ExpressionExpand.cs" />
+    <Compile Include="ORM\FieldInfo.cs" />
+    <Compile Include="ORM\FieldState.cs" />
+    <Compile Include="ORM\IConnectionContext.cs" />
+    <Compile Include="ORM\IDBContextInitHandler.cs" />
+    <Compile Include="ORM\IDriver.cs" />
+    <Compile Include="ORM\IEntityState.cs" />
+    <Compile Include="ORM\InTableExpression.cs" />
+    <Compile Include="ORM\ISQLBuilder.cs" />
+    <Compile Include="ORM\JoinTable.cs" />
+    <Compile Include="ORM\KeyValueCollection.cs" />
+    <Compile Include="ORM\Mappings\AggregationAttribute.cs" />
+    <Compile Include="ORM\Mappings\AggregationType.cs" />
+    <Compile Include="ORM\Mappings\ChangeTable.cs" />
+    <Compile Include="ORM\Mappings\ColumnAttribute.cs" />
+    <Compile Include="ORM\Mappings\CommandReader.cs" />
+    <Compile Include="ORM\Mappings\ConnectionAttribute.cs" />
+    <Compile Include="ORM\Mappings\DataObject.cs" />
+    <Compile Include="ORM\Mappings\DObjectToBObject.cs" />
+    <Compile Include="ORM\Mappings\IDAttribute.cs" />
+    <Compile Include="ORM\Mappings\ITableObject.cs" />
+    <Compile Include="ORM\Mappings\MSSqlSelectTop.cs" />
+    <Compile Include="ORM\Mappings\ObjectMapper.cs" />
+    <Compile Include="ORM\Mappings\OracleSelectTop.cs" />
+    <Compile Include="ORM\Mappings\ProcAttribute.cs" />
+    <Compile Include="ORM\Mappings\ProcBuilder.cs" />
+    <Compile Include="ORM\Mappings\ProcDataReader.cs" />
+    <Compile Include="ORM\Mappings\ProcParameterAttribute.cs" />
+    <Compile Include="ORM\Mappings\PropertyCast.cs" />
+    <Compile Include="ORM\Mappings\PropertyMapper.cs" />
+    <Compile Include="ORM\Mappings\RelationAttribute.cs" />
+    <Compile Include="ORM\Mappings\SelectChangeAttribute.cs" />
+    <Compile Include="ORM\Mappings\SelectReader.cs" />
+    <Compile Include="ORM\Mappings\TableAttribute.cs" />
+    <Compile Include="ORM\Mappings\ValueAttribute.cs" />
+    <Compile Include="ORM\ModuleCast.cs" />
+    <Compile Include="ORM\MySqlBuilder.cs" />
+    <Compile Include="ORM\OracleBuilder.cs" />
+    <Compile Include="ORM\Result.cs" />
+    <Compile Include="ORM\SelectObject.cs" />
+    <Compile Include="ORM\SmarkData.cs" />
+    <Compile Include="ORM\SmarkDataSection.cs" />
+    <Compile Include="ORM\SmarkException.cs" />
+    <Compile Include="ORM\SqliteBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ORM\DataMsg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DataMsg.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

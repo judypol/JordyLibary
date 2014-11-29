@@ -1,0 +1,10 @@
+D:\ProCode\SuporLibary\SuporLibary\bin\Debug\SuporLibary.dll
+D:\ProCode\SuporLibary\SuporLibary\bin\Debug\SuporLibary.pdb
+D:\ProCode\SuporLibary\SuporLibary\bin\Debug\EPPlus.dll
+D:\ProCode\SuporLibary\SuporLibary\bin\Debug\EPPlus.xml
+D:\ProCode\SuporLibary\SuporLibary\obj\Debug\SuporLibary.ORM.DataMsg.resources
+D:\ProCode\SuporLibary\SuporLibary\obj\Debug\SuporLibary.csproj.GenerateResource.Cache
+D:\ProCode\SuporLibary\SuporLibary\obj\Debug\SuporLibary.dll
+D:\ProCode\SuporLibary\SuporLibary\obj\Debug\SuporLibary.pdb
+D:\ProCode\SuporLibary\SuporLibary\bin\Debug\System.Data.SQLite.dll
+D:\ProCode\SuporLibary\SuporLibary\obj\Debug\SuporLibary.csprojResolveAssemblyReference.cache
