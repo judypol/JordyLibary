@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JordyTest", "SuperTest\Jord
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JordyCodeGenerator", "SuporCodeGenerator\JordyCodeGenerator.csproj", "{C8516338-AC5C-4042-BD0D-175404E107EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jordy.MvcExtense", "Jordy.MvcExtense\Jordy.MvcExtense.csproj", "{F06028DC-DD33-4300-97BB-71545435B0D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C8516338-AC5C-4042-BD0D-175404E107EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8516338-AC5C-4042-BD0D-175404E107EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8516338-AC5C-4042-BD0D-175404E107EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F06028DC-DD33-4300-97BB-71545435B0D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F06028DC-DD33-4300-97BB-71545435B0D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F06028DC-DD33-4300-97BB-71545435B0D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F06028DC-DD33-4300-97BB-71545435B0D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
