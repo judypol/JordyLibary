@@ -1,4 +1,3 @@
-D:\GitHub\JordyLibary\Jordy.MvcExtense\obj\Debug\Jordy.MvcExtense.csprojResolveAssemblyReference.cache
 D:\GitHub\JordyLibary\Jordy.MvcExtense\bin\Debug\Jordy.MvcExtense.dll
 D:\GitHub\JordyLibary\Jordy.MvcExtense\bin\Debug\Jordy.MvcExtense.pdb
 D:\GitHub\JordyLibary\Jordy.MvcExtense\obj\Debug\Jordy.MvcExtense.dll
@@ -18,3 +17,8 @@ D:\GitHub\JordyLibary\Jordy.MvcExtense\bin\Debug\System.Web.WebPages.Deployment.
 D:\GitHub\JordyLibary\Jordy.MvcExtense\bin\Debug\System.Web.WebPages.Razor.xml
 D:\GitHub\JordyLibary\Jordy.MvcExtense\obj\Debug\Jordy.MvcExtense.MvcJavascript.resources
 D:\GitHub\JordyLibary\Jordy.MvcExtense\obj\Debug\Jordy.MvcExtense.csproj.GenerateResource.Cache
+D:\GitHub\JordyLibary\Jordy.MvcExtense\bin\Debug\RazorEngine.dll
+D:\GitHub\JordyLibary\Jordy.MvcExtense\bin\Debug\RazorEngine.pdb
+D:\GitHub\JordyLibary\Jordy.MvcExtense\bin\Debug\RazorEngine.xml
+D:\GitHub\JordyLibary\Jordy.MvcExtense\bin\Debug\zh-Hans\System.Web.Razor.resources.dll
+D:\GitHub\JordyLibary\Jordy.MvcExtense\obj\Debug\Jordy.MvcExtense.csprojResolveAssemblyReference.cache

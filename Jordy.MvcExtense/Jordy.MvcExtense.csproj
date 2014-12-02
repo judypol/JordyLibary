@@ -34,6 +34,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\packages\RazorEngine.3.3.0\lib\net40\RazorEngine.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -49,7 +52,7 @@
     </Reference>
     <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -73,6 +76,8 @@
     <Compile Include="Common\EditFormOptions.cs" />
     <Compile Include="Common\EditOptions.cs" />
     <Compile Include="Common\EditRules.cs" />
+    <Compile Include="KendoUI\Settings\AutoCompleteSettings.cs" />
+    <Compile Include="KendoUI\Settings\SettingsBase.cs" />
     <Compile Include="DataReader\JsonReader.cs" />
     <Compile Include="Enums\Align.cs" />
     <Compile Include="Enums\DataType.cs" />
@@ -95,7 +100,9 @@
     <Compile Include="JqGrid\Grid.cs" />
     <Compile Include="JqGrid\GridColumn.cs" />
     <Compile Include="JqGrid\GridModelBinder.cs" />
-    <Compile Include="MvcExtenseBase.cs" />
+    <Compile Include="KendoUI\UI\AutoComplete.cs" />
+    <Compile Include="KendoUI\UIExtensionFactory.cs" />
+    <Compile Include="KendoUI\MvcExtenseBase.cs" />
     <Compile Include="MvcJavascript.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -113,6 +120,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="KendoUITemplate\" />
+    <Folder Include="KendoUI\DataSource\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

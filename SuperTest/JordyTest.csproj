@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Htl.cs" />
     <Compile Include="Model\Address.cs" />
     <Compile Include="Model\AddressType.cs" />
     <Compile Include="Model\cdsgus.cs" />

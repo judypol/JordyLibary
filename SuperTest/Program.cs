@@ -21,6 +21,14 @@ namespace SuperTest
             //TestFunValue();
             //TestORM();
             TestXML();
+
+            string b = "a";
+            b.AutoComplete(r =>
+            {
+                r.A = "aa";
+                r.B = "bb";
+            });
+
         }
         public static void Test1()
         {
