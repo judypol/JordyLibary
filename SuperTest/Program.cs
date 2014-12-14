@@ -16,19 +16,10 @@ namespace SuperTest
     {
         static void Main(string[] args)
         {
-            //TestAdoHelper();
-            //TestReflect();
-            //TestFunValue();
-            //TestORM();
-            TestXML();
 
-            string b = "a";
-            b.AutoComplete(r =>
-            {
-                r.A = "aa";
-                r.B = "bb";
-            });
-
+            TestFile testf = new TestFile();
+            testf.TestAutocomplete();
+            //testf.Json();
         }
         public static void Test1()
         {

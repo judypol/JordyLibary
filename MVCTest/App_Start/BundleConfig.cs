@@ -38,6 +38,19 @@ namespace MVCTest
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
+                        "~/Scripts/kendo/kendo.web.min.js",
+                        "~/Scripts/kendo/2014.3.1119/cultures/kendo.culture.zh-CHS.min.js"
+                        ));
+            bundles.Add(new StyleBundle("~/Content/kendo").Include(
+                        "~/Content/kendo/2014.3.1119/kendo.common.min.css",
+                        "~/Content/kendo/2014.3.1119/kendo.rtl.min.css",
+                        "~/Content/kendo/2014.3.1119/kendo.default.min.css"
+                ));
+                
+
+            bundles.IgnoreList.Clear();
         }
     }
 }

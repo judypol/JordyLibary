@@ -13,9 +13,14 @@ namespace Jordy.MvcExtense.KendoUI
     /// </summary>
     public static class UIExtensionFactory
     {
-        public static string AutoComplete(this HtmlHelper helper,Action<AutoCompleteSettings> action)
+        /// <summary>
+        /// Html在Razor中调用的总入口
+        /// </summary>
+        /// <param name="helper"></param>
+        /// <returns></returns>
+        public static UIEx UI(this HtmlHelper helper)
         {
-            return UIEx.CreateUIExtension<AutoComplete, AutoCompleteSettings>(action).ToHtmlString();
+            return new UIEx(helper.ViewContext, helper.ViewDataContainer);
         }
     }
     /// <summary>
@@ -23,7 +28,14 @@ namespace Jordy.MvcExtense.KendoUI
     /// </summary>
     public class UIEx
     {
-        public static T CreateUIExtension<T, T1>(Action<T1> action)
+        /// <summary>
+        /// 根据类型生成对应的Javascript
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T1"></typeparam>
+        /// <param name="action"></param>
+        /// <returns></returns>
+        public T CreateUIExtension<T, T1>(Action<T1> action)
             where T : MvcExtenseBase
             where T1 : SettingsBase
         {
@@ -32,6 +44,53 @@ namespace Jordy.MvcExtense.KendoUI
 
             T t = (T)Activator.CreateInstance(typeof(T), local);
             return t;
+        }
+        private T CreateUIExtension<T,T1>(Action<T1> action,
+            ViewContext context,IViewDataContainer viewDataContainer)
+            where T:MvcExtenseBase
+            where T1:SettingsBase
+        {
+            try
+            {
+                T1 local = Activator.CreateInstance<T1>();
+                action(local);
+
+                T t = (T)Activator.CreateInstance(typeof(T), local, context, viewDataContainer);
+                return t;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private ViewContext _context;
+        private IViewDataContainer _viewDataContainer;
+        public UIEx(ViewContext context,IViewDataContainer viewDataContainer)
+        {
+            _context = context;
+            _viewDataContainer = viewDataContainer;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="action"></param>
+        /// <returns></returns>
+        public MvcHtmlString AutoComplete(Action<AutoCompleteSettings> action)
+        {
+            return CreateUIExtension<AutoComplete, AutoCompleteSettings>(action).ToHtmlString();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="action"></param>
+        /// <returns></returns>
+        public MvcHtmlString Button(Action<ButtonSettings> action)
+        {
+            return CreateUIExtension<Button, ButtonSettings>(action).ToHtmlString();
+        }
+        public MvcHtmlString Calendar(Action<CalendarSettings> action)
+        {
+            return CreateUIExtension<Calendar, CalendarSettings>(action).ToHtmlString();
         }
     }
 }

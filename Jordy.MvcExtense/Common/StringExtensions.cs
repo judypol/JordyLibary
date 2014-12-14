@@ -11,5 +11,14 @@ namespace Jordy.MvcExtense.Common
         {
             return string.IsNullOrWhiteSpace(value);
         }
+        /// <summary>
+        /// 将首字符转换成小写字
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string LowercaseFirst(this string value)
+        {
+            return char.ToLower(value[0]) + value.Substring(1);
+        }
     }
 }
