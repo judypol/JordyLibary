@@ -92,5 +92,33 @@ namespace Jordy.MvcExtense.KendoUI
         {
             return CreateUIExtension<Calendar, CalendarSettings>(action).ToHtmlString();
         }
+        public MvcHtmlString ColorPalette(Action<ColorPaletteSettings> action)
+        {
+            return CreateUIExtension<ColorPalette, ColorPaletteSettings>(action).ToHtmlString();
+        }
+        public MvcHtmlString ColorPicker(Action<ColorPickerSettings> action)
+        {
+            return CreateUIExtension<ColorPicker, ColorPickerSettings>(action).ToHtmlString();
+        }
+        public MvcHtmlString ComboBox(Action<ComboBoxSettings> action)
+        {
+            return CreateUIExtension<ComboBox, ComboBoxSettings>(action).ToHtmlString();
+        }
+        public MvcHtmlString ContextMenu(Action<ContextMenuSettings> action)
+        {
+            return CreateUIExtension<ContextMenu, ContextMenuSettings>(action).ToHtmlString();
+        }
+        public MvcHtmlString DatePicker(Action<DatePickerSettings> action)
+        {
+            return CreateUIExtension<DatePicker, DatePickerSettings>(action).ToHtmlString();
+        }
+        public MvcHtmlString DateTimePicker(Action<DateTimePickerSettings> action)
+        {
+            return CreateUIExtension<DateTimePicker, DateTimePickerSettings>(action).ToHtmlString();
+        }
+        public MvcHtmlString DropdownList(Action<DropdownListSettings> action)
+        {
+            return CreateUIExtension<DropdownList, DropdownListSettings>(action).ToHtmlString();
+        }
     }
 }

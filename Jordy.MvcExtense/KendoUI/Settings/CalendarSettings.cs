@@ -87,15 +87,16 @@ namespace Jordy.MvcExtense.KendoUI.Settings
 
             return script;
         }
-        /// <summary>
-        /// 设置日期的显示
-        /// </summary>
-        public enum CalendarDepth
-        {
-            Month,      //shows the days of the month
-            Year,       //shows the months of the year
-            Decade,     //shows the years of the decade
-            Century     //shows the decades from the century
-        }
+        
+    }
+    /// <summary>
+    /// 设置日期的显示
+    /// </summary>
+    public enum CalendarDepth
+    {
+        Month,      //shows the days of the month
+        Year,       //shows the months of the year
+        Decade,     //shows the years of the decade
+        Century     //shows the decades from the century
     }
 }

@@ -14,17 +14,22 @@ namespace Jordy.MvcExtense.KendoUI
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        public static string ToJSSettings(Settings.SettingsBase t)
+        public static string ToJSSettings(object t)
         {
             Type type = t.GetType();
-            string js = ";";
+            string js = "";
             foreach(var property in type.GetProperties())       //获取所有的属性
             {
                 string jsProperty="";                           //js属性名
                 string jsValue="";                              //js属性值
                 dynamic attrs = Attribute.GetCustomAttribute(property, typeof(PropertyNameAttribute));
                 if (attrs != null && (!attrs.IsIngoreForJavaScript))
-                    jsProperty = attrs.PropertyName.LowercaseFirst();
+                {
+                    PropertyNameAttribute propertyName = (PropertyNameAttribute)attrs;
+                    if (propertyName.IsIngoreForJavaScript)
+                        continue;
+                    jsProperty = propertyName.PropertyName.LowercaseFirst();
+                }
 
                 if(jsProperty.IsNullOrWhiteSpace())
                     jsProperty=property.Name.LowercaseFirst();
@@ -32,7 +37,12 @@ namespace Jordy.MvcExtense.KendoUI
                     jsValue=property.GetValue(t, null)==null?"":property.GetValue(t,null).ToString();
 
                 if(!jsValue.IsNullOrWhiteSpace())           //如果属性值不为空，则显示
-                    js += jsProperty + ":" + jsValue.LowercaseFirst()+",";
+                {
+                    if (property.PropertyType == typeof(string) || property.PropertyType.BaseType == typeof(Enum))
+                        js += jsProperty + ":'" + jsValue.LowercaseFirst() + "',";
+                    else
+                        js += jsProperty + ":" + jsValue.LowercaseFirst() + ",";
+                }
             }
             return js;
         }

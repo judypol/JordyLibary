@@ -75,5 +75,11 @@ namespace Jordy.MvcExtense.KendoUI.Settings
             }
             return js.TrimEnd(',');
         }
+        protected string AddOptions(string script,string options)
+        {
+            if (!script.IsNullOrWhiteSpace())
+                script += ",";
+            return script += options;
+        }
     }
 }

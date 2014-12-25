@@ -1,6 +1,8 @@
 ﻿@using Jordy.MvcExtense.KendoUI;
 <input id="autoComplete" />
 <div id="calendar"></div>
+<div id="colorPalette"></div>
+<div id="colorPicker"></div>
 @section scripts
 {
     @Html.UI().AutoComplete(a =>
@@ -8,7 +10,7 @@
         a.Id = "autoComplete";
         a.DataSource = new List<string>() { "one", "two", "three" };
     })
-    @Html.UI().Calendar(c =>
+    @*@Html.UI().Calendar(c =>
     {
         c.Id = "calendar";
         c.Depth = Jordy.MvcExtense.KendoUI.Settings.CalendarSettings.CalendarDepth.Year;
@@ -16,7 +18,19 @@
         c.Min = new DateTime(2000, 10, 1);
         c.Culture = "zh-CHS";
         c.Value = new DateTime(2001, 11, 1);
-    })
+    })*@
+    @*@Html.UI().ColorPalette(c => {
+        c.Id = "colorPalette";
+        c.Palette = "websafe";
+        c.Columns = 6;
+        c.Value = "#fff";
+    })*@
+    @Html.UI().ColorPicker(c => {
+    c.Id = "colorPicker";
+    c.Columns = 32;
+        }
+
+    );
 }
 <div id="cadenlar"></div>
 @*<script>
@@ -34,3 +48,36 @@
             });
     });
 </script>*@
+<button id="btn" onclick="click()">点我</button>
+
+@Scripts.Render("~/bundles/jqueryui");
+@Styles.Render("~/Content/themes/base/css");
+<select multiple="multiple">
+    <option value="1" selected="selected">231</option>
+    <option value="2" >232</option>
+    <option value="3" selected="selected">233</option>
+    <option value="4">234</option>
+    <option value="5">235</option>
+    <option value="6">236</option>
+</select>
+<script type="text/javascript">
+    $(function () {
+        //function click()
+        //{
+        //    $('#dialog').dialog();
+        //}
+        
+        $("select").multiselect({
+            selectedList:4
+        });
+    });
+
+    function click() {
+        $('#dialog').dialog();
+    };
+    
+</script>
+
+<div id="dialog">
+    <iframe src="@Html.Action("About")"></iframe>
+</div>

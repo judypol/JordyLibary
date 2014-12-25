@@ -84,6 +84,11 @@
     <Compile Include="KendoUI\Settings\BindingSettingsBase.cs" />
     <Compile Include="KendoUI\Settings\ButtonSettings.cs" />
     <Compile Include="KendoUI\Settings\CalendarSettings.cs" />
+    <Compile Include="KendoUI\Settings\ColorPaletteSettings.cs" />
+    <Compile Include="KendoUI\Settings\ColorPickerSettings.cs" />
+    <Compile Include="KendoUI\Settings\ComboBoxSettings.cs" />
+    <Compile Include="KendoUI\Settings\ContextMenuSettings.cs" />
+    <Compile Include="KendoUI\Settings\DatePickerSettings.cs" />
     <Compile Include="KendoUI\Settings\SettingsBase.cs" />
     <Compile Include="DataReader\JsonReader.cs" />
     <Compile Include="Enums\Align.cs" />
@@ -112,6 +117,11 @@
     <Compile Include="KendoUI\MvcExtenseBase.cs" />
     <Compile Include="KendoUI\UI\Button.cs" />
     <Compile Include="KendoUI\UI\Calendar.cs" />
+    <Compile Include="KendoUI\UI\ColorPalette.cs" />
+    <Compile Include="KendoUI\UI\ColorPicker.cs" />
+    <Compile Include="KendoUI\UI\ComboBox.cs" />
+    <Compile Include="KendoUI\UI\ContextMenu.cs" />
+    <Compile Include="KendoUI\UI\DatePicker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\NullPropertiesConverter.cs" />
     <Compile Include="Common\StringExtensions.cs" />
