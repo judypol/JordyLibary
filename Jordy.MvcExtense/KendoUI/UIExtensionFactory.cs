@@ -112,13 +112,13 @@ namespace Jordy.MvcExtense.KendoUI
         {
             return CreateUIExtension<DatePicker, DatePickerSettings>(action).ToHtmlString();
         }
-        public MvcHtmlString DateTimePicker(Action<DateTimePickerSettings> action)
-        {
-            return CreateUIExtension<DateTimePicker, DateTimePickerSettings>(action).ToHtmlString();
-        }
-        public MvcHtmlString DropdownList(Action<DropdownListSettings> action)
-        {
-            return CreateUIExtension<DropdownList, DropdownListSettings>(action).ToHtmlString();
-        }
+        //public MvcHtmlString DateTimePicker(Action<DateTimePickerSettings> action)
+        //{
+        //    return CreateUIExtension<DateTimePicker, DateTimePickerSettings>(action).ToHtmlString();
+        //}
+        //public MvcHtmlString DropdownList(Action<DropdownListSettings> action)
+        //{
+        //    return CreateUIExtension<DropdownList, DropdownListSettings>(action).ToHtmlString();
+        //}
     }
 }

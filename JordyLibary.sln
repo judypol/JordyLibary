@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JordyLibary", "SuporLibary\JordyLibary.csproj", "{BEB2E522-06E6-4033-8130-32107ED83849}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JordyLibary", "JordyLibary\JordyLibary.csproj", "{BEB2E522-06E6-4033-8130-32107ED83849}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JordyTest", "SuperTest\JordyTest.csproj", "{0AC23214-7F9A-4D65-9D6F-92AB5591BCF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JordyTest", "JordyTest\JordyTest.csproj", "{0AC23214-7F9A-4D65-9D6F-92AB5591BCF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JordyCodeGenerator", "SuporCodeGenerator\JordyCodeGenerator.csproj", "{C8516338-AC5C-4042-BD0D-175404E107EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JordyCodeGenerator", "JordyCodeGenerator\JordyCodeGenerator.csproj", "{C8516338-AC5C-4042-BD0D-175404E107EE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jordy.MvcExtense", "Jordy.MvcExtense\Jordy.MvcExtense.csproj", "{F06028DC-DD33-4300-97BB-71545435B0D0}"
 EndProject

@@ -16,6 +16,11 @@ namespace JordyLibary.Core
 
         private static Dictionary<FieldInfo, GetValueHandler> mFieldGetHandlers = new Dictionary<FieldInfo, GetValueHandler>();
         private static Dictionary<FieldInfo, SetValueHandler> mFieldSetHandlers = new Dictionary<FieldInfo, SetValueHandler>();
+        /// <summary>
+        /// 获取Field get 操作委托
+        /// </summary>
+        /// <param name="field"></param>
+        /// <returns></returns>
         public static GetValueHandler FieldGetHandler(FieldInfo field)
         {
             GetValueHandler handler;
@@ -41,6 +46,11 @@ namespace JordyLibary.Core
             }
             return handler;
         }
+        /// <summary>
+        /// 创建一个Field get 委托
+        /// </summary>
+        /// <param name="field"></param>
+        /// <returns></returns>
         private static GetValueHandler CreateFieldGetHandler(FieldInfo field)
         {
             DynamicMethod dm = new DynamicMethod("", typeof(object), new Type[] { typeof(object) }, field.DeclaringType);
@@ -51,6 +61,11 @@ namespace JordyLibary.Core
             ilGenerator.Emit(OpCodes.Ret);
             return (GetValueHandler)dm.CreateDelegate(typeof(GetValueHandler));
         }
+        /// <summary>
+        /// Field Set 设置器委托
+        /// </summary>
+        /// <param name="field"></param>
+        /// <returns></returns>
         public static SetValueHandler FieldSetHandler(FieldInfo field)
         {
             SetValueHandler handler;
@@ -75,6 +90,11 @@ namespace JordyLibary.Core
             }
             return handler;
         }
+        /// <summary>
+        /// 创建一个设置器委托
+        /// </summary>
+        /// <param name="field"></param>
+        /// <returns></returns>
         private static SetValueHandler CreateFieldSetHandler(FieldInfo field)
         {
             DynamicMethod dm = new DynamicMethod("", null, new Type[] { typeof(object), typeof(object) }, field.DeclaringType);
@@ -93,6 +113,11 @@ namespace JordyLibary.Core
 
         private static Dictionary<PropertyInfo, GetValueHandler> mPropertyGetHandlers = new Dictionary<PropertyInfo, GetValueHandler>();
         private static Dictionary<PropertyInfo, SetValueHandler> mPropertySetHandlers = new Dictionary<PropertyInfo, SetValueHandler>();
+        /// <summary>
+        /// 获取Set 设置器委托
+        /// </summary>
+        /// <param name="property"></param>
+        /// <returns></returns>
         public static SetValueHandler PropertySetHandler(PropertyInfo property)
         {
             SetValueHandler handler;
@@ -117,6 +142,11 @@ namespace JordyLibary.Core
             }
             return handler;
         }
+        /// <summary>
+        /// 创建一个设置器委托
+        /// </summary>
+        /// <param name="property"></param>
+        /// <returns></returns>
         private static SetValueHandler CreatePropertySetHandler(PropertyInfo property)
         {
             DynamicMethod dynamicMethod = new DynamicMethod(string.Empty, null, new Type[] { typeof(object), typeof(object) }, property.DeclaringType.Module);
@@ -143,6 +173,11 @@ namespace JordyLibary.Core
 
             return setter;
         }
+        /// <summary>
+        /// 属性设置器委托
+        /// </summary>
+        /// <param name="property"></param>
+        /// <returns></returns>
         public static GetValueHandler PropertyGetHandler(PropertyInfo property)
         {
             GetValueHandler handler;
@@ -167,6 +202,11 @@ namespace JordyLibary.Core
             }
             return handler;
         }
+        /// <summary>
+        /// 创建一个属性设置器
+        /// </summary>
+        /// <param name="property"></param>
+        /// <returns></returns>
         private static GetValueHandler CreatePropertyGetHandler(PropertyInfo property)
         {
 
@@ -196,6 +236,11 @@ namespace JordyLibary.Core
         #region Method Handler
 
         private static Dictionary<MethodInfo, FastMethodHandler> mMethodHandlers = new Dictionary<MethodInfo, FastMethodHandler>();
+        /// <summary>
+        /// 获取一个方法执行器委托
+        /// </summary>
+        /// <param name="method"></param>
+        /// <returns></returns>
         public static FastMethodHandler MethodHandler(MethodInfo method)
         {
             FastMethodHandler handler = null;
@@ -220,6 +265,11 @@ namespace JordyLibary.Core
             }
             return handler;
         }
+        /// <summary>
+        /// 创建一个方法执行器委托
+        /// </summary>
+        /// <param name="methodInfo"></param>
+        /// <returns></returns>
         private static FastMethodHandler CreateMethodHandler(MethodInfo methodInfo)
         {
             DynamicMethod dynamicMethod = new DynamicMethod(string.Empty, typeof(object), new Type[] { typeof(object), typeof(object[]) }, methodInfo.DeclaringType.Module);
@@ -289,6 +339,11 @@ namespace JordyLibary.Core
         #region Instance Handler
 
         private static Dictionary<Type, ObjectInstanceHandler> mInstanceHandlers = new Dictionary<Type, ObjectInstanceHandler>();
+        /// <summary>
+        /// 获取一个实例委托
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public static ObjectInstanceHandler InstanceHandler(Type type)
         {
             ObjectInstanceHandler handler;
@@ -313,6 +368,11 @@ namespace JordyLibary.Core
             }
             return handler;
         }
+        /// <summary>
+        /// 创建一个实例委托
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         private static ObjectInstanceHandler CreateInstanceHandler(Type type)
         {
             DynamicMethod method = new DynamicMethod(string.Empty, type, null, type.Module);

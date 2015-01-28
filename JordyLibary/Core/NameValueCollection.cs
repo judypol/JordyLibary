@@ -6,7 +6,8 @@ using System.Text;
 
 namespace JordyLibary.Core
 {
-    public class NameValueCollection<T>:System.Collections.Specialized.NameObjectCollectionBase
+    public class NameValueCollection<T>:
+        System.Collections.Specialized.NameObjectCollectionBase
     {
         public NameValueCollection()
         { }

@@ -99,7 +99,7 @@
       <Project>{f06028dc-dd33-4300-97bb-71545435b0d0}</Project>
       <Name>Jordy.MvcExtense</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SuporLibary\JordyLibary.csproj">
+    <ProjectReference Include="..\JordyLibary\JordyLibary.csproj">
       <Project>{beb2e522-06e6-4033-8130-32107ed83849}</Project>
       <Name>JordyLibary</Name>
     </ProjectReference>

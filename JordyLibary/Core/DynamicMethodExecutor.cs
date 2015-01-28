@@ -7,20 +7,35 @@ using System.Text;
 
 namespace JordyLibary.Core
 {
+    /// <summary>
+    /// 反射动态执行方法
+    /// </summary>
     public class DynamicMethodExecutor
     {
         private Func<object, object[], object> m_execute;
-
+        /// <summary>
+        /// 获取方法的委托执行器
+        /// </summary>
+        /// <param name="methodInfo">反射方法属性（包括属性）</param>
         public DynamicMethodExecutor(MethodInfo methodInfo)
         {
             this.m_execute = this.GetExecuteDelegate(methodInfo);
         }
-
+        /// <summary>
+        /// 执行对应的方法
+        /// </summary>
+        /// <param name="instance">实例对象</param>
+        /// <param name="parameters">参数</param>
+        /// <returns></returns>
         public object Execute(object instance, object[] parameters)
         {
             return this.m_execute(instance, parameters);
         }
-
+        /// <summary>
+        /// 生成委托执行体
+        /// </summary>
+        /// <param name="methodInfo"></param>
+        /// <returns></returns>
         private Func<object, object[], object> GetExecuteDelegate(MethodInfo methodInfo)
         {
             // parameters to execute

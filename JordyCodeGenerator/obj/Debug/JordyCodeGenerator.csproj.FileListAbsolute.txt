@@ -9,3 +9,14 @@ D:\ProCode\JordyLibary\SuporCodeGenerator\obj\Debug\SuporCodeGenerator.Propertie
 D:\ProCode\JordyLibary\SuporCodeGenerator\obj\Debug\JordyCodeGenerator.csproj.GenerateResource.Cache
 D:\ProCode\JordyLibary\SuporCodeGenerator\obj\Debug\SuporCodeGenerator.exe
 D:\ProCode\JordyLibary\SuporCodeGenerator\obj\Debug\SuporCodeGenerator.pdb
+D:\GitHub\JordyLibary\JordyCodeGenerator\bin\Debug\SuporCodeGenerator.exe.config
+D:\GitHub\JordyLibary\JordyCodeGenerator\bin\Debug\SuporCodeGenerator.exe
+D:\GitHub\JordyLibary\JordyCodeGenerator\bin\Debug\SuporCodeGenerator.pdb
+D:\GitHub\JordyLibary\JordyCodeGenerator\bin\Debug\RazorEngine.dll
+D:\GitHub\JordyLibary\JordyCodeGenerator\bin\Debug\System.Data.SQLite.dll
+D:\GitHub\JordyLibary\JordyCodeGenerator\obj\Debug\JordyCodeGenerator.csprojResolveAssemblyReference.cache
+D:\GitHub\JordyLibary\JordyCodeGenerator\obj\Debug\JordyCodeGenerator.CodeGeneratorFrm.resources
+D:\GitHub\JordyLibary\JordyCodeGenerator\obj\Debug\SuporCodeGenerator.Properties.Resources.resources
+D:\GitHub\JordyLibary\JordyCodeGenerator\obj\Debug\JordyCodeGenerator.csproj.GenerateResource.Cache
+D:\GitHub\JordyLibary\JordyCodeGenerator\obj\Debug\SuporCodeGenerator.exe
+D:\GitHub\JordyLibary\JordyCodeGenerator\obj\Debug\SuporCodeGenerator.pdb

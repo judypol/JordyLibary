@@ -17,3 +17,6 @@ D:\GitHub\JordyLibary\Jordy.MvcExtense\bin\Debug\zh-Hans\System.Web.Razor.resour
 D:\GitHub\JordyLibary\Jordy.MvcExtense\obj\Debug\Jordy.MvcExtense.csprojResolveAssemblyReference.cache
 D:\GitHub\JordyLibary\Jordy.MvcExtense\obj\Debug\Jordy.MvcExtense.dll
 D:\GitHub\JordyLibary\Jordy.MvcExtense\obj\Debug\Jordy.MvcExtense.pdb
+D:\GitHub\JordyLibary\Jordy.MvcExtense\bin\Debug\System.Web.Mvc.dll
+D:\GitHub\JordyLibary\Jordy.MvcExtense\bin\Debug\System.Web.Mvc.xml
+D:\GitHub\JordyLibary\Jordy.MvcExtense\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll

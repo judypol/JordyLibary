@@ -6,7 +6,10 @@ using System.Text;
 
 namespace JordyLibary.Core
 {
-    public class FieldHander
+    /// <summary>
+    /// 反射获取Field值
+    /// </summary>
+    public class FieldHandler
     {
         public FieldInfo Field
         { get; set; }
@@ -20,7 +23,7 @@ namespace JordyLibary.Core
             get;
             set;
         }
-        public FieldHander(FieldInfo field)
+        public FieldHandler(FieldInfo field)
         {
             GetValue = ReflectionHandlerFactory.FieldGetHandler(field);
             SetValue = ReflectionHandlerFactory.FieldSetHandler(field);
@@ -28,6 +31,9 @@ namespace JordyLibary.Core
         }
 
     }
+    /// <summary>
+    /// 获取属性值
+    /// </summary>
     public class PropertyHandler
     {
         public PropertyHandler(PropertyInfo property)
@@ -56,6 +62,9 @@ namespace JordyLibary.Core
             set;
         }
     }
+    /// <summary>
+    /// 执行方法
+    /// </summary>
     public class MethodHandler
     {
         public MethodHandler(MethodInfo method)
@@ -74,6 +83,9 @@ namespace JordyLibary.Core
             private set;
         }
     }
+    /// <summary>
+    /// 实例化Handler
+    /// </summary>
     public class InstanceHandler
     {
         public InstanceHandler(Type type)
@@ -86,9 +98,28 @@ namespace JordyLibary.Core
             private set;
         }
     }
-
+    /// <summary>
+    /// Get 方法获取值委托
+    /// </summary>
+    /// <param name="source"></param>
+    /// <returns></returns>
     public delegate object GetValueHandler(object source);
+    /// <summary>
+    /// 实例化委托
+    /// </summary>
+    /// <returns></returns>
     public delegate object ObjectInstanceHandler();
+    /// <summary>
+    /// Set 设置器
+    /// </summary>
+    /// <param name="source"></param>
+    /// <param name="value"></param>
     public delegate void SetValueHandler(object source,object value);
+    /// <summary>
+    /// 方法执行委托
+    /// </summary>
+    /// <param name="target"></param>
+    /// <param name="paramters"></param>
+    /// <returns></returns>
     public delegate object FastMethodHandler(object target,object[] paramters);
 }

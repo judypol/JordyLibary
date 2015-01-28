@@ -18,3 +18,12 @@ D:\GitHub\JordyLibary\SuporLibary\obj\Debug\JordyLibary.ORM.DataMsg.resources
 D:\GitHub\JordyLibary\SuporLibary\obj\Debug\JordyLibary.csproj.GenerateResource.Cache
 D:\GitHub\JordyLibary\SuporLibary\obj\Debug\JordyLibary.dll
 D:\GitHub\JordyLibary\SuporLibary\obj\Debug\JordyLibary.pdb
+D:\GitHub\JordyLibary\JordyLibary\bin\Debug\JordyLibary.dll
+D:\GitHub\JordyLibary\JordyLibary\bin\Debug\JordyLibary.pdb
+D:\GitHub\JordyLibary\JordyLibary\bin\Debug\EPPlus.dll
+D:\GitHub\JordyLibary\JordyLibary\bin\Debug\EPPlus.xml
+D:\GitHub\JordyLibary\JordyLibary\obj\Debug\JordyLibary.csprojResolveAssemblyReference.cache
+D:\GitHub\JordyLibary\JordyLibary\obj\Debug\JordyLibary.ORM.DataMsg.resources
+D:\GitHub\JordyLibary\JordyLibary\obj\Debug\JordyLibary.csproj.GenerateResource.Cache
+D:\GitHub\JordyLibary\JordyLibary\obj\Debug\JordyLibary.dll
+D:\GitHub\JordyLibary\JordyLibary\obj\Debug\JordyLibary.pdb

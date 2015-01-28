@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
-using OfficeOpenXml;
+using OfficeOpenXml;    //EPPlus
 using System.IO;
 using System.Reflection;
 using System.Collections.Specialized;
@@ -45,25 +45,30 @@ namespace JordyLibary.Core
        /// <param name="newFileName">新的Excel表路径</param>
        /// <param name="tempFileName">模板路径</param>
        /// <param name="sheetName">模板SheetName</param>
+       /// <param name="isSave">是否保存模板，当需要在多个Sheet中保存数据时，
+       /// 只需要在最后一个操作Sheet中将此值设为true，其他false</param>
         public static void DataTable2Template(DataTable sourceTable,string newFileName,
-            string tempFileName,string sheetName)
+            string tempFileName,string sheetName,bool isSave=true)
         {
             FileInfo tempfi = new FileInfo(tempFileName);
-            
-            using (ExcelPackage excel = new ExcelPackage(tempfi,true))
+            FileInfo fi = new FileInfo(newFileName);
+
+            if (fi.Exists)
+            {
+                fi.Delete();
+                fi = new FileInfo(newFileName);
+            }
+
+            using (ExcelPackage excel = new ExcelPackage(fi,tempfi))
             {
                 ExcelWorksheet ws = excel.Workbook.Worksheets[sheetName];
                 DataTable2Excel(sourceTable, ws);
 
                 excel.Compression = CompressionLevel.BestSpeed;
-                FileInfo fi = new FileInfo(newFileName);
-                if(fi.Exists)
-                {
-                    fi.Delete();
-                    fi = new FileInfo(newFileName);
-                }
-
-                excel.SaveAs(fi);
+                
+                
+                if(isSave)
+                    excel.SaveAs(fi);
             }
         }
         /// <summary>
@@ -109,14 +114,15 @@ namespace JordyLibary.Core
             }
         }
         /// <summary>
-        /// 
+        /// 将实体对象写入Excel
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="source"></param>
+        /// <typeparam name="T">实体对象类型</typeparam>
+        /// <param name="source">实体集合</param>
         /// <param name="fileName"></param>
         /// <param name="sheetName"></param>
         /// <param name="header"></param>
-        public static void Entity2Excel<T>(List<T> source,string fileName,string sheetName,int header=1)
+        public static void Entity2Excel<T>(List<T> source,string fileName,
+            string sheetName,int header=1)
         {
             FileInfo fi = new FileInfo(fileName);
             if (fi.Exists)
@@ -135,7 +141,7 @@ namespace JordyLibary.Core
             }
         }
         /// <summary>
-        /// 
+        /// 将实体对象写入Excel
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
@@ -181,7 +187,7 @@ namespace JordyLibary.Core
             }
         }
         /// <summary>
-        /// 
+        /// 将Excel数据库导入DataTable
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="sheetName"></param>
