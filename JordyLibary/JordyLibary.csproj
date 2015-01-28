@@ -64,6 +64,7 @@
     <Compile Include="Core\Validater.cs" />
     <Compile Include="Core\XMLHelper.cs" />
     <Compile Include="Core\XmlNameValueCollection.cs" />
+    <Compile Include="EFExtension\IRepository.cs" />
     <Compile Include="ORM\BlowFish.cs" />
     <Compile Include="ORM\Command.cs" />
     <Compile Include="ORM\ConnectionContext.cs" />
@@ -130,9 +131,7 @@
       <LastGenOutput>DataMsg.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="EFExtension\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
