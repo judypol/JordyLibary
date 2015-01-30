@@ -12,7 +12,7 @@ namespace Jordy.MvcExtense.KendoUI.UI
         public Calendar(CalendarSettings settings)
             :base(settings)
         { }
-        public Calendar(AutoCompleteSettings settings,ViewContext context,IViewDataContainer viewDataContainer)
+        public Calendar(CalendarSettings settings,ViewContext context,IViewDataContainer viewDataContainer)
             :base(settings,context,viewDataContainer)
         { }
     }

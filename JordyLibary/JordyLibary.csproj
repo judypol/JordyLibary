@@ -31,10 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="EPPlus">
       <HintPath>..\thirdPart\EPPlus.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite">
@@ -53,6 +60,7 @@
     <Compile Include="Core\DynamicMethodExecutor.cs" />
     <Compile Include="Core\EmitHandler.cs" />
     <Compile Include="Core\ExcelHelper.cs" />
+    <Compile Include="Core\ExceptionExtension.cs" />
     <Compile Include="Core\NameValueCollection.cs" />
     <Compile Include="Core\ObjectCopy.cs" />
     <Compile Include="Core\PerformanceTesting.cs" />
@@ -64,6 +72,8 @@
     <Compile Include="Core\Validater.cs" />
     <Compile Include="Core\XMLHelper.cs" />
     <Compile Include="Core\XmlNameValueCollection.cs" />
+    <Compile Include="EFExtension\EFRepository.cs" />
+    <Compile Include="EFExtension\IUnitOfWork.cs" />
     <Compile Include="EFExtension\IRepository.cs" />
     <Compile Include="ORM\BlowFish.cs" />
     <Compile Include="ORM\Command.cs" />
@@ -131,7 +141,10 @@
       <LastGenOutput>DataMsg.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

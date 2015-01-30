@@ -17,9 +17,12 @@ namespace SuperTest
         static void Main(string[] args)
         {
 
-            TestFile testf = new TestFile();
-            testf.TestAutocomplete();
+            //TestFile testf = new TestFile();
+            //testf.TestAutocomplete();
             //testf.Json();
+            string s = "{0}";
+            string output = string.Format(s, "0{0}");
+            Console.WriteLine(output);
         }
         public static void Test1()
         {

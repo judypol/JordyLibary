@@ -20,7 +20,7 @@ namespace Jordy.MvcExtense.KendoUI.Settings
         [PropertyName(IsIngoreForJavaScript = true)]
         public string TextFieldName { get; set; }
         public bool? Enable { get; set; }
-        public FilterString Filter { get; set; }
+        public FilterString? Filter { get; set; }
         /// <summary>
         /// If set to true the first suggestion will be automatically highlighted.
         /// </summary>
